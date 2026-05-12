@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: JetBrainsMono;
+    --font-body: GeneralSans;
+    --font-mono: GeistMono;
+    --radius: 0.625rem;
+
+    --background: 0.1 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.15 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.18 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.65 0.18 195;
+    --primary-foreground: 0.1 0 0;
+
+    --secondary: 0.7 0.15 155;
+    --secondary-foreground: 0.1 0 0;
+    --muted: 0.25 0 0;
+    --muted-foreground: 0.55 0 0;
+
+    --accent: 0.65 0.18 195;
+    --accent-foreground: 0.1 0 0;
+
+    --destructive: 0.6 0.2 25;
+    --destructive-foreground: 0.95 0 0;
+
+    --border: 0.25 0 0;
+    --input: 0.18 0 0;
+    --ring: 0.65 0.18 195;
+
+    --chart-1: 0.65 0.18 195;
+    --chart-2: 0.7 0.15 155;
+    --chart-3: 0.65 0.15 60;
+    --chart-4: 0.6 0.2 25;
+    --chart-5: 0.55 0 0;
+
+    --sidebar: 0.15 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.65 0.18 195;
+    --sidebar-primary-foreground: 0.1 0 0;
+    --sidebar-accent: 0.7 0.15 155;
+    --sidebar-accent-foreground: 0.1 0 0;
+    --sidebar-border: 0.25 0 0;
+    --sidebar-ring: 0.65 0.18 195;
+  }
+
+  .dark {
+    --background: 0.1 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.15 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.18 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.65 0.18 195;
+    --primary-foreground: 0.1 0 0;
+
+    --secondary: 0.7 0.15 155;
+    --secondary-foreground: 0.1 0 0;
+    --muted: 0.25 0 0;
+    --muted-foreground: 0.55 0 0;
+
+    --accent: 0.65 0.18 195;
+    --accent-foreground: 0.1 0 0;
+
+    --destructive: 0.6 0.2 25;
+    --destructive-foreground: 0.95 0 0;
+
+    --border: 0.25 0 0;
+    --input: 0.18 0 0;
+    --ring: 0.65 0.18 195;
+
+    --chart-1: 0.65 0.18 195;
+    --chart-2: 0.7 0.15 155;
+    --chart-3: 0.65 0.15 60;
+    --chart-4: 0.6 0.2 25;
+    --chart-5: 0.55 0 0;
+
+    --sidebar: 0.15 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.65 0.18 195;
+    --sidebar-primary-foreground: 0.1 0 0;
+    --sidebar-accent: 0.7 0.15 155;
+    --sidebar-accent-foreground: 0.1 0 0;
+    --sidebar-border: 0.25 0 0;
+    --sidebar-ring: 0.65 0.18 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  @font-face {
+    font-family: JetBrainsMono;
+    src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: GeneralSans;
+    src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: GeistMono;
+    src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.4), 0 1px 0
+      oklch(var(--primary) / 0.05) inset;
+  }
+
+  .scan-line-overlay {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      oklch(var(--primary) / 0.025) 2px,
+      oklch(var(--primary) / 0.025) 3px
+    );
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md border border-border rounded-lg shadow-lg relative overflow-hidden;
+    background: linear-gradient(
+      135deg,
+      oklch(var(--card) / 0.4) 0%,
+      oklch(var(--card) / 0.2) 100%
+    );
+  }
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      oklch(var(--primary) / 0.3) 0%,
+      transparent 100%
+    );
+  }
+
+  .neon-glow-cyan {
+    @apply text-primary drop-shadow-lg transition-all duration-300;
+    text-shadow: 0 0 10px oklch(var(--primary) / 0.5);
+  }
+
+  .neon-glow-green {
+    @apply text-secondary drop-shadow-lg transition-all duration-300;
+    text-shadow: 0 0 10px oklch(var(--secondary) / 0.5);
+  }
+
+  .threat-pulse {
+    animation: threat-pulse 2s ease-in-out infinite;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "overview": "Advanced Phishing Awareness Training System — an interactive cybersecurity education platform with dark glassmorphism UI, phishing simulation labs, an interactive quiz with certificate generation, security awareness modules covering 8+ topics, and a statistics dashboard.",
+  "features": [
+    "Dark theme with glassmorphism and neon cybersecurity styling",
+    "8 security awareness topic modules (phishing, smishing, vishing, 2FA, and more)",
+    "Interactive fake email analyzer with red-flag highlighting",
+    "Fake website detection simulator",
+    "URL safety checker with phishing risk meter",
+    "Interactive quiz with automatic scoring and pass/fail system",
+    "Certificate generation after passing the quiz",
+    "Cybersecurity statistics dashboard",
+    "Animated cards, progress indicators, sticky navigation, smooth scrolling",
+    "Cybersecurity tips popup and animated phishing alerts"
+  ],
+  "category": "education",
+  "tags": [
+    "cybersecurity",
+    "phishing",
+    "awareness",
+    "training",
+    "quiz",
+    "education",
+    "interactive"
+  ],
+  "last_updated": "2026-05-12T17:19:42.790Z"
+}
